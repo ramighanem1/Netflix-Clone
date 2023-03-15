@@ -7,7 +7,7 @@ function Home() {
     const [trendingArr, setTrendingArr] = useState([]);
 
     const sendReq = async () => {
-        const serverURL = `http://localhost:5500/trending`;
+        const serverURL = `${process.env.REACT_APP_serverURL}/trending`;
         const response = await fetch(serverURL);
         const data = await response.json();
         setTrendingArr(data);

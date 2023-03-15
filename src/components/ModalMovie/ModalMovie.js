@@ -14,7 +14,7 @@ function ModalMovie(props) {
 
     const sendReq = async (moviData) => {
         setLoading(true);
-        const serverURL = `http://localhost:5500/addMovie`;
+        const serverURL = `${process.env.REACT_APP_serverURL}/addMovie`;
         fetch(serverURL, {
             method: 'POST',
             body: JSON.stringify(
